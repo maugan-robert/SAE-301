@@ -54,4 +54,4 @@ if (isset($_POST['submit'])) {
     </form>
 </div>
 
-<?php get_footer(); // Inclut le pied de page du site ?>
+<?php get_footer(); ?>

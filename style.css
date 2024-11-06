@@ -1,0 +1,711 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #010A13;
+    color: #FAFAFA;
+}
+
+.site-header {
+    background-color: #1B1B1B;
+    padding: 22px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Commissioner', sans-serif; 
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logo img {
+    max-height: 35px;
+    z-index: 50;
+}
+
+.main-navigation .menu-items {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation .menu-items li a {
+    color: #FAFAFA;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.logout-menu-item {
+    background-color: #0AC8B9 !important;
+    font-weight: 700 !important;
+    color: #010A13 !important;
+    padding: 6px 10px !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .main-navigation {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        width: 35px;
+        padding: 12px;
+        background-color: #2A2A2A;
+        border-radius: 8px;
+    }
+
+    .burger-icon, .close-overlay {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .burger-icon span, .close-overlay span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #FAFAFA;
+    }
+
+    .close-overlay {
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+        color: #FAFAFA;
+    }
+
+    /* Overlay menu */
+    .mobile-menu-overlay {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 15vh;
+        left: 0;
+        width: 100%;
+        background-color: #1B1B1B;
+        z-index: 40;
+    }
+
+    .mobile-menu-content .mobile-menu-items {
+        list-style: none;
+        padding: 10px;
+    }
+
+    .mobile-menu-content .mobile-menu-items li a {
+        color: #FAFAFA;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        padding: 13px 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Active overlay with cross icon */
+    .burger-menu.active .burger-icon {
+        display: none;
+    }
+
+    .burger-menu.active .close-overlay {
+        display: block;
+    }
+
+    /* Show mobile menu when active */
+    .mobile-menu-overlay.active {
+        display: flex;
+    }
+}
+
+footer {
+    background-color: #1B1B1B;
+    color: #FAFAFA;
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 14px;
+    margin-top: 7vh; 
+    z-index: 10;
+}
+
+footer .logo {
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+footer .logo img {
+    max-height: 30px; 
+}
+
+.second-navigation .menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0; /* Espacement vertical pour le menu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.second-navigation .menu-items li a {
+    text-decoration: none;
+    color: #FAFAFA;
+    font-size: 14px;
+}
+
+footer p {
+    margin-top: 15px;
+    padding-bottom: 0.5vh;
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+.img-accueil { 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: relative;  /* Nécessaire pour positionner le pseudo-élément */
+    z-index: -1;
+}
+
+
+.title-accueil {
+    position: absolute;
+    top: 33%; 
+    left: 5%;
+    font-family: 'Cinzel', serif; 
+    font-size: 35px;
+    color: #FAFAFA;
+}
+
+
+.text-intro-accueil {
+    position: absolute;
+    top: 47%;
+    left: 5%;
+    font-family: 'Comme', sans-serif;
+    font-size: 16px;
+    color: #FAFAFA;
+    max-width: 90%;
+}
+
+/* Le bouton */
+.button-intro {
+    position: absolute;
+    text-decoration: none;
+    top: 62%; /* En dessous du texte */
+    padding: 12px 30px;
+    background: linear-gradient(to right, #785A28, #C89B3C); /* Dégradé du bouton */
+    color: #010A13; /* Texte noir */
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    left: 5%;
+    cursor: pointer;
+}
+
+.button-intro:hover {
+    opacity: 0.8; 
+}
+
+.title-part {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    color: #FAFAFA;
+}
+
+.contenu-accueil {
+    margin-left: 5%;
+    width: 90%;
+    margin-top: 15vh;
+}
+
+.contenu-participer {
+    margin-left: 5%;
+    width: 90%;
+}
+
+.text {
+    font-family: 'Comme', sans-serif;
+    font-size: 14px;
+    color: #FAFAFA;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.button-blue {
+    padding: 12px;
+    background-color: #0AC8B9;
+    color: #010A13;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.equipes-part{
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+.matchs-part {
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.equipe-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.equipe-title {
+    font-family: 'Comme', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+.equipe-title a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.equipe-title a:hover {
+    text-decoration: underline;
+}
+
+
+.create-team-btn {
+    padding: 12px;
+    background-color: #0AC8B9;
+    color: #010A13;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create-team-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Formulaire de création d'équipe */
+#create-form {
+    margin-top: 20px;
+    background-color: #1B1B1B;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+#create-form input[type="text"],
+#create-form select,
+#create-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#create-form input[type="submit"] {
+    background-color: #0AC8B9;
+    color: #010A13;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#create-form input[type="submit"]:hover {
+    background-color: #0a9e9e;
+}
+
+/* Style général pour la page de l'équipe */
+.toutes-les-equipes {
+    margin-left: 5%;
+    width: 95%;
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-between; /* Alignement des éléments à gauche et droite */
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+}
+
+.team-info {
+    flex: 1; /* Occupation d'un espace flexible pour le titre et les stats */
+}
+
+.team-title {
+    font-size: 24px;
+    font-family: 'Cinzel', serif;
+    color: #FAFAFA;
+}
+
+.statistiques p {
+    font-size: 16px;
+    color: #FAFAFA;
+    font-family: 'Comme', sans-serif;
+}
+
+.equipe-logo-profil {
+    max-width: 150px; /* Largeur maximale du logo */
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Liste des membres */
+.members {
+    margin-top: 20px;
+}
+
+.title-team {
+    font-size: 16px;
+    font-family: 'Comme', serif;
+    color: #646464;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.title-matchs {
+    font-size: 16px;
+    font-family: 'Comme', serif;
+    color: #646464;
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.members ul {
+    list-style-type: none;
+    padding-left: 0;
+   
+}
+
+.members li {
+    font-size: 15px;
+    font-family: 'Comme', sans-serif;
+    color: #FAFAFA;
+    padding-bottom: 5px;
+}
+
+.match-item a {
+    color: inherit; /* Hérite de la couleur définie dans le conteneur */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+.match-card a {
+    color: inherit; /* Hérite de la couleur définie dans le conteneur */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* S'assurer que les éléments internes n'ont pas de soulignement */
+.match-info, .team-initials, .score {
+    text-decoration: none;
+}
+
+.match-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.matchs-part {
+    text-decoration: none;
+    list-style: none;
+}
+
+.match-item {
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #FAFAFA;
+}
+
+.match-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2A2A2A; 
+    border-radius: 10px;
+    color: #FAFAFA;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.team-logo img {
+    height: auto; /* Préserve les proportions de l'image */
+    width: 60px; /* Tu peux ajuster cette valeur en fonction de la taille que tu veux */
+}
+
+.match-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    color: #FAFAFA;
+    font-family: 'Inter', sans-serif;
+}
+
+.team-initials {
+    font-size: 20px; /* Taille des initiales */
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.score {
+    font-size: 20px; /* Taille du score */
+    font-weight: normal;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+}
+
+
+.date-match {
+    font-size: 12px;
+    color: #FAFAFA;
+    font-family: 'Comme', sans-serif;
+    opacity: 0.5;
+    text-align: center;
+    margin-top :30px; 
+}
+
+.team-logo-single-match {
+    width: 120px;
+}
+
+.team-a-up {
+    display: flex;
+    flex-direction: column  ;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-b-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-a {
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-b {
+    flex-direction: column;
+    align-items: center;
+}
+
+.teams-match { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Comme', sans-serif;
+}
+
+
+.classement-container {
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 10px;
+}
+
+.rank-classement {
+    background-color: #2A2A2A;
+    width :60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
+}
+
+.equipe-logo-classement {
+    width: 60px;
+    height: auto;
+    margin-left: 15px;
+}
+
+.nom-equipe-classement {
+    font-family: 'Comme', sans-serif;
+    font-size: 16px;
+    color: #FAFAFA; 
+    padding-left :15px;
+    margin-top: 2.5vh;
+}
+
+
+.points-classement {
+    position: absolute;
+    right: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #FAFAFA;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.ligne-classement   {
+    display: flex;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Styles de base pour le formulaire */
+.contact-form-container {
+    background-color: #1c1c1c; /* Fond sombre */
+    color: #f5f5f5; /* Texte clair */
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;  /* Assurer que le formulaire ne dépasse pas l'écran */
+    margin: 0 auto;  /* Centrer le formulaire */
+    box-sizing: border-box;  /* Inclure padding et bordures dans la largeur totale */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Titre du formulaire */
+.contact-form-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Styles des groupes de champs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #ccc; /* Couleur des labels */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #333; /* Fond des champs */
+    color: #fff; /* Texte des champs */
+    border: 1px solid #444; /* Bordure des champs */
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;  /* Inclure padding et bordures dans la largeur totale */
+}
+
+/* Styles pour le bouton d'envoi */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0AC8B9; /* Couleur du bouton */
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box;  /* Inclure padding et bordures dans la largeur totale */
+}
+
+.submit-button:hover {
+    background-color: #0AC8B9; /* Changement de couleur au survol */
+}
+
+/* Adaptation mobile */
+@media screen and (max-width: 600px) {
+    .contact-form-container {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .contact-form-title {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+
+    .submit-button {
+        font-size: 16px;
+    }
+}
+
+
+.profil-container {
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Comme', sans-serif;
+}
